@@ -5,7 +5,7 @@ EASYPANEL_VERSION="2.6.14"
 PUREFTP_VERSION="1.0.36"
 PREFIX="/vhs/kangle"
 CONFIG_FILES="/ext/tpl_php52/php-templete.ini"
-DOWNLOAD_BASE_URL="http://test-10004704.file.myqcloud.com";
+DOWNLOAD_BASE_URL="https://github.com/hsxh00/linkljd/blob/master";
 restore_config()
 {
         for p in $CONFIG_FILES; do
@@ -96,7 +96,7 @@ function setup_kangle
             		fi
     		fi
 	fi
-	KANGLE_URL="$DOWNLOAD_BASE_URL/src/kangle-$KANGLE_VERSION.tar.gz"
+	KANGLE_URL="$DOWNLOAD_BASE_URL/src/kangle-$KANGLE_VERSION.tar.gz?raw=true"
 	if [  -f kangle-$KANGLE_VERSION.tar.gz ] ; then
 		rm -f kangle-$KANGLE_VERSION.tar.gz
 	fi	
@@ -218,8 +218,8 @@ function setup_easypanel
 	chmod 700 $PREFIX/etc $PREFIX/var $PREFIX/nodewww/data	
 	rm -rf easypanel-$EASYPANEL_VERSION-$SYS
 	rm -rf easypanel-$EASYPANEL_VERSION-$SYS-$SYSVERSION.tar.gz
-	EASYPANEL_URL="$DOWNLOAD_BASE_URL/easypanel/easypanel-$EASYPANEL_VERSION-$SYS-$SYSVERSION.tar.gz"
-	EA_FILE_NAME="easypanel-$EASYPANEL_VERSION-$SYS-$SYSVERSION.tar.gz"
+	EASYPANEL_URL="$DOWNLOAD_BASE_URL/easypanel/easypanel-$EASYPANEL_VERSION-$SYS-$SYSVERSION.tar.gz?raw=true"
+	EA_FILE_NAME="easypanel-$EASYPANEL_VERSION-$SYS-$SYSVERSION.tar.gz?raw=true"
 	wget $EASYPANEL_URL -O $EA_FILE_NAME -c
 	if [ $? != 0 ] ; then
         	exit $?
@@ -274,7 +274,7 @@ function setup_pureftpd
 		exit;
 	fi	
 	del_proftpd
-	DOWN_URL="$DOWNLOAD_BASE_URL/easypanel/source/pure-ftpd-$PUREFTP_VERSION.tar.gz"
+	DOWN_URL="$DOWNLOAD_BASE_URL/easypanel/source/pure-ftpd-$PUREFTP_VERSION.tar.gz?raw=true"
 	WGET_NEW_NAME="pure-ftpd-$PUREFTP_VERSION.tar.gz"
 	wget $DOWN_URL -O $WGET_NEW_NAME -c
 	if [ $? != 0 ] ; then 
